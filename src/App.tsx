@@ -1,24 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavigationBar from './bootstrap/NavigationBar';
-import Home from './pages/Home';
-import Usuarios from './pages/Usuarios';
-import Sueldo from './pages/Sueldo';
-import Bono from './pages/Bono';
-import Registro from './pages/Registro';
+import Navbar from './components/Navbar'
+import Carousel from './components/Carousel'
+import Cards from './components/cards'
+import Alerts from './components/alerts'
+import Footer from './components/Footer'
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/usuarios" element={<Usuarios />} />
-        <Route path="/sueldo" element={<Sueldo />} />
-        <Route path="/bono" element={<Bono />} />
-        <Route path="/registro" element={<Registro />} />
-      </Routes>
-    </Router>
-  );
+    <>
+      <Navbar />
+      <div className="container mt-4">
+        <div className="p-5 mb-4 bg-light rounded-3">
+          <div className="container-fluid py-3">
+            <h1 className="display-5 fw-bold">¡Bienvenido a Mi App!</h1>
+            <p className="col-md-8 fs-4">
+            </p>
+          </div>
+        </div>
+        <Carousel />
+        <Cards />
+        <Alerts />
+      </div>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App

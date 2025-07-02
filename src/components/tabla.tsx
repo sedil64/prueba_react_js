@@ -1,3 +1,5 @@
+import Table from 'react-bootstrap/Table';
+
 const estudiantes = [
   { id: 1, nombre: 'Juan', edad: 25 },
   { id: 2, nombre: 'María', edad: 30 },
@@ -6,21 +8,23 @@ const estudiantes = [
 
 export default function TablaEstudiantes() {
   return (
-    <table border={1} cellPadding={8}>
+    <Table striped bordered hover responsive>
       <thead>
         <tr>
+          <th>Id</th>
           <th>Nombre</th>
-          <th>Apellido</th>
+          <th>Edad</th>
         </tr>
       </thead>
       <tbody>
-        {estudiantes.map((persona, index) => (
-          <tr key={index}>
+        {estudiantes.map((persona) => (
+          <tr key={persona.id}>
+            <td>{persona.id}</td>
             <td>{persona.nombre}</td>
-            <td>{persona.apellido}</td>
+            <td>{persona.edad}</td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
